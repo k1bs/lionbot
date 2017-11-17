@@ -1,0 +1,21 @@
+{
+  "name": "LionBot",
+  "version": "1.0.0",
+  "description": "A chat bot for Twitch",
+  "main": "server.js",
+  "repository": "https://github.com/k1bs/lionbot.git",
+  "author": "Olivia Stoick <oliviastoick@gmail.com>, Alex Kibler <alexkibler@me.com>, Aaron Bart-Addison <abaddison16@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^7.3.1"
+  }
+}
