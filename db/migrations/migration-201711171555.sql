@@ -19,6 +19,6 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS users_commands (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER FOREIGN KEY REFERENCES users(id),
-  command_id INTEGER FOREIGN KEY REFERENCES commands(id)
+  user_id INTEGER REFERENCES users(id),
+  command_id INTEGER REFERENCES commands(id)
 );
