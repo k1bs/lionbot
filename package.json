@@ -1,6 +1,6 @@
 {
   "name": "LionBot",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "A chat bot for Twitch",
   "main": "server.js",
   "repository": "https://github.com/k1bs/lionbot.git",

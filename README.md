@@ -1,4 +1,5 @@
 # LionBot
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ![wireframe](./assets/wireframe1.jpg)
 
@@ -61,3 +62,7 @@ When the user visits the page, they are greeted with a Splash page, detailing so
 ## Links and Resources
 
 (The NPM module that we plan to use.)[https://www.npmjs.com/package/twitch-bot]
+
+## Technologies Used
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
