@@ -1,12 +1,12 @@
+DROP TABLE IF EXISTS users_commands;
 DROP TABLE IF EXISTS commands;
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS users_commands;
 
 CREATE TABLE IF NOT EXISTS commands (
   id SERIAL PRIMARY KEY,
   keyword VARCHAR(255) NOT NULL,
   response TEXT NOT NULL,
-  default_command BOOLEAN NOT NULL,
+  standard BOOLEAN NOT NULL,
   enabled BOOLEAN NOT NULL
 );
 
