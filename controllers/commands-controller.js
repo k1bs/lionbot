@@ -35,9 +35,15 @@ commandController.update = (req, res, next) => {
     response: req.body.response
   }, req.user.id)
     .then(command => res.json({
-      message: 'Command updated succesfully!',
+      message: 'Command updated successfully!',
       data: command
     }))
 }
 
+commandController.delete = (req, res, next) => {
+  Command.destroy(req.params.id)
+    .then(() => res.json({
+      message: 'Command deleted successfully!'
+    }))
+}
 module.exports = commandController

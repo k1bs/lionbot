@@ -23,7 +23,7 @@ Command.create = (command) => {
 }
 
 Command.update = (command, id) => {
-  return oneOrNone(
+  return db.oneOrNone(
     `UPDATE commands SET
     keyword = $1,
     response = $2,
@@ -31,6 +31,12 @@ Command.update = (command, id) => {
     RETURNING *`,
     [command.keyword, command.response, id]
   )
+}
+
+Command.destroy = (id) => {
+  return db.none(
+    `DELETE from commands
+    WHERE id = $1`, id)
 }
 
 module.exports = Command
