@@ -24,7 +24,7 @@ class CommandList extends Component {
   renderCommandList () {
     if (this.state.dataLoaded) {
       return this.state.commands.map(command => {
-        return <Command key={commands.keyword} command={command} /> // command or commands???
+        return <Command key={command.id} command={command} /> // command or commands???
       })
     } else return <p>Loading...</p>
   }

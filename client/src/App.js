@@ -86,7 +86,7 @@ class App extends Component {
           <Header />
           <div className='container'>
             <Route exact path='/' component={Home} />
-            <Route exact path='/commands' render={() => <CommandList auth={this.state.auth} />} />
+            <Route exact path='/CommandList' render={() => <CommandList auth={this.state.auth} />} />
           </div>
           <Footer />
         </div>
