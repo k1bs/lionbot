@@ -36,6 +36,17 @@ class App extends Component {
       }).catch(err => console.log(err))
   }
 
+  logout () {
+    fetch('/api/auth/logout', {
+      credentials: 'include'
+    }).then(res => res.json())
+      .then(res => {
+        this.setState({
+          auth: res.auth
+        })
+      }).catch(err => console.log(err))
+  }
+
   handleRegisterSubmit (e, data) {
     fetch('/api/auth/register', {
       method: 'POST',
