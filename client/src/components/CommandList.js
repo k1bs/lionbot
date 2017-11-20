@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Command from './Command'
 
 class CommandList extends Component {
   constructor () {
@@ -22,7 +23,9 @@ class CommandList extends Component {
 
   renderCommandList () {
     if (this.state.dataLoaded) {
-      return <h1>Our command list will go here</h1>
+      return this.state.commands.map(command => {
+        return <Command key={commands.keyword} command={command} />
+      })
     } else return <p>Loading...</p>
   }
 
