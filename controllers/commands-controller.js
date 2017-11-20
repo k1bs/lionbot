@@ -10,7 +10,7 @@ commandController.index = (req, res, next) => {
     }))
 }
 
-commandController.findById =  (req, res, next) => {
+commandController.findById = (req, res, next) => {
   Command.findById(req.params.id)
     .then(command => res.json({
       message: 'Ok!',

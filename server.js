@@ -38,7 +38,7 @@ app.listen(PORT, () => {
   console.log(`🤖 Listening on port ${PORT}`)
 })
 
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
   res.send('🤖 LionBot is alive !')
 })
 
@@ -50,14 +50,14 @@ app.get('/', (req,res) => {
 const commandRoutes = require('./routes/command-routes')
 app.use('/api/commands', commandRoutes)
 
-app.use('*', (req,res) => {
+app.use('*', (req, res) => {
   res.status(400).json({
     message: 'Not Found!'
   })
 })
 
 app.use((err, req, res, next) => {
-  console.log(err);
+  console.log(err)
     res.status(500).json({
       error: err,
       message: err.message

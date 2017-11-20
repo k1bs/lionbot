@@ -19,6 +19,6 @@ Command.create = (command) => {
     VALUES
     ($1, $2, false, true)
     RETURNING *`,
-    [command.keyword, command.response, id])
+    [command.keyword, command.response])
 }
 module.exports = Command
