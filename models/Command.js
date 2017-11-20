@@ -7,3 +7,5 @@ Command.findAll = () => {
     `SELECT * FROM commands ORDER BY id ASC`
   )
 }
+
+module.exports = Command

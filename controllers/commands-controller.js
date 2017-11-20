@@ -9,3 +9,5 @@ commandController.index = (req, res, next) => {
       data: {commands}
     }))
 }
+
+module.exports = commandController
