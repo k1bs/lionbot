@@ -8,7 +8,7 @@ Command.findAll = () => {
 }
 
 Command.findById = (id) => {
-  return db.One(
+  return db.one(
     `SELECT * FROM commands WHERE id = $1`, id)
 }
 module.exports = Command
