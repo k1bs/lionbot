@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import CommandList from './components/CommandList'
+import Register from './components/Register'
+import Account from './components/Account'
+import Login from './components/Login'
 
 const fetch = window.fetch
 
@@ -62,6 +65,7 @@ class App extends Component {
   }
 
   handleRegisterSubmit (e, data) {
+    e.preventDefault()
     fetch('/api/auth/register', {
       method: 'POST',
       headers: {
@@ -85,6 +89,21 @@ class App extends Component {
         <div className='App'>
           <Header />
           <div className='container'>
+            <Route exact path='/register' render={() => (
+              this.state.auth
+                ? <Redirect to='/account' />
+                : <Register handleRegisterSubmit={this.handleRegisterSubmit} />
+              )} />
+            <Route exact path='/account' render={() => (
+              !this.state.auth
+                ? <Redirect to='/login' />
+                : <Account user={this.state.user} />
+              )} />
+            <Route exact path='/login' render={() => (
+                this.state.auth
+                  ? <Redirect to='/account' />
+                  : <Login handleLoginSubmit={this.handleLoginSubmit} />
+              )} />
             <Route exact path='/' component={Home} />
             <Route exact path='/CommandList' render={() => <CommandList auth={this.state.auth} />} />
           </div>

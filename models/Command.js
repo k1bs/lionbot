@@ -26,7 +26,7 @@ Command.update = (command, id) => {
   return db.oneOrNone(
     `UPDATE commands SET
     keyword = $1,
-    response = $2,
+    response = $2
     WHERE id = $3
     RETURNING *`,
     [command.keyword, command.response, id]

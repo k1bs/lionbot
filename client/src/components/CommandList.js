@@ -8,13 +8,14 @@ class CommandList extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      commands: null,
+      commands: [],
       dataLoaded: false,
       auth: props.auth,
       currentlyEditing: null
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.setEditing = this.setEditing.bind(this)
+    this.getAllCommands = this.getAllCommands.bind(this)
   }
 
   componentDidMount () {
@@ -22,11 +23,12 @@ class CommandList extends Component {
   }
 
   getAllCommands () {
-    fetch('/api/commamnds', {credentials: 'include'})
+    fetch('/api/commands', {credentials: 'include'})
     .then(res => res.json())
     .then(res => {
+      console.log(res.data)
       this.setState({
-        commands: res.data.commands,
+        commands: res.data,
         dataLoaded: true
       })
     }).catch(err => console.log(err))
@@ -40,7 +42,7 @@ class CommandList extends Component {
 
   handleFormSubmit (method, e, data, id) {
     e.preventDefault()
-    fetch(`/api/commamnds/${id || ''}`, {
+    fetch(`/api/commands/${id || ''}`, {
       method: method,
       credentials: 'include',
       headers: {
@@ -51,11 +53,15 @@ class CommandList extends Component {
     .then(res => res.json())
     .then(res => {
       console.log(res)
+      this.setState({
+        currentlyEditing: null
+      })
       this.getAllCommands()
     }).catch(err => console.log(err))
   }
 
   renderCommandList () {
+    console.log(this.state)
     if (this.state.dataLoaded) {
       return this.state.commands.map(command => {
         if (command.id === this.state.currentlyEditing) {
