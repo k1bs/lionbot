@@ -17,4 +17,15 @@ commandController.findById =  (req, res, next) => {
       data: command
     }))
 }
+
+commandController.create = (req, res, next) => {
+  Command.create({
+    keyword: req.body.keyword,
+    response: req.body.response
+  })
+    .then(command => res.json({
+      message: 'ok!',
+      data: command
+    }))
+}
 module.exports = commandController
