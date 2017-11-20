@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import Command from './Command'
 
+const fetch = window.fetch
+
 class CommandList extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
       commands: null,
       dataLoaded: false
@@ -11,14 +13,43 @@ class CommandList extends Component {
   }
 
   componentDidMount () {
-    fetch('/api/commamnds') // (/api/commands', { credentials: 'include'})
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          commands: res.data.commands,
-          dataLoaded: true
-        })
-      }).catch(err => console.log(err))
+    this.getAllCommands()
+    // fetch('/api/commamnds') // (/api/commands', { credentials: 'include'})
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     this.setState({
+    //       commands: res.data.commands,
+    //       dataLoaded: true
+    //     })
+    //   }).catch(err => console.log(err))
+  }
+
+  getAllCommands () {
+    fetch('/api/commamnds', {credentials: 'include'})
+    .then(res => res.json())
+    .then(res => {
+      this.setState({
+        commands: res.data.commands,
+        dataLoaded: true
+      })
+    }).catch(err => console.log(err))
+  }
+
+  handleFormSubmit (method, e, data, id) {
+    e.preventDefault()
+    fetch(`/api/commamnds/${id || ''}`, {
+      method: method,
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(res => {
+      console.log(res)
+      this.getAllCommands()
+    }).catch(err => console.log(err))
   }
 
   renderCommandList () {
