@@ -7,7 +7,7 @@ const Command = (props) => {
       <h4>{props.commands.response}</h4>
       <p>{props.commands.enabled}</p>
       {props.auth
-        ? <span className = "edit" onClick={() => props.setEditing(props.commands.id)}>Edit</span>
+        ? <span className='edit' onClick={() => props.setEditing(props.commands.id)}>Edit</span>
         : ''}
     </div>
   )
