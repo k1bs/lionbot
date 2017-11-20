@@ -33,7 +33,7 @@ commandController.update = (req, res, next) => {
   Command.update({
     keyword: req.body.keyword,
     response: req.body.response
-  }, req.user.id)
+  }, req.params.id)
     .then(command => res.json({
       message: 'Command updated successfully!',
       data: command
