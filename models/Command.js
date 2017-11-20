@@ -21,4 +21,15 @@ Command.create = (command) => {
     RETURNING *`,
     [command.keyword, command.response])
 }
+
+Command.update = (command, id) => {
+  return oneOrNone(
+    `UPDATE commands SET
+    keyword = $1,
+    response = $2,
+    WHERE id = $3
+    RETURNING *`,
+    [command.keyword, command.response, id]
+  )
+}
 module.exports = Command
