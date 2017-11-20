@@ -2,9 +2,12 @@ const db = require('../db/config')
 
 const Command = {}
 
-Command.findAll = () => {
+Command.findAll = (userId) => {
   return db.query(
-    `SELECT * FROM commands ORDER BY id ASC`)
+    `SELECT * FROM commands
+    WHERE user_id = $1
+    OR standard = true
+    ORDER BY id ASC`, [userId])
 }
 
 Command.findById = (id) => {
@@ -12,14 +15,14 @@ Command.findById = (id) => {
     `SELECT * FROM commands WHERE id = $1`, id)
 }
 
-Command.create = (command) => {
+Command.create = (command, userId) => {
   return db.one(
     `INSERT into commands
-    (keyword, response, standard, enabled)
+    (keyword, response, standard, enabled, user_id)
     VALUES
-    ($1, $2, false, true)
+    ($1, $2, false, true, $3)
     RETURNING *`,
-    [command.keyword, command.response])
+    [command.keyword, command.response, userId])
 }
 
 Command.update = (command, id) => {

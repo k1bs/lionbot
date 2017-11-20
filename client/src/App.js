@@ -87,7 +87,7 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
-          <Header />
+          <Header logout={this.logout} />
           <div className='container'>
             <Route exact path='/register' render={() => (
               this.state.auth
@@ -105,7 +105,11 @@ class App extends Component {
                   : <Login handleLoginSubmit={this.handleLoginSubmit} />
               )} />
             <Route exact path='/' component={Home} />
-            <Route exact path='/CommandList' render={() => <CommandList auth={this.state.auth} />} />
+            <Route exact path='/commandlist' render={() => (
+              !this.state.auth
+                ? <Redirect to='/login' />
+                : <CommandList auth={this.state.auth} />
+              )} />
           </div>
           <Footer />
         </div>
