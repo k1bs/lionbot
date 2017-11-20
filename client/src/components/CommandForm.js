@@ -9,6 +9,7 @@ class CommandForm extends Component {
       enabled: props.command ? props.command.enabled : ''
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange (e) {
@@ -19,12 +20,22 @@ class CommandForm extends Component {
     })
   }
 
+  handleSubmit (method, e, data, id) {
+    e.preventDefault()
+    this.setState({
+      keyword: '',
+      response: '',
+      enabled: ''
+    })
+    this.props.handleFormSubmit(method, data, id)
+  }
+
   render () {
     return (
       <form onSubmit={(
         this.props.isAdd
-        ? (e) => this.props.handleFormSubmit('POST', e, this.state)
-        : (e) => this.props.handleFormSubmit('PUT', e, this.state, this.props.command.id)
+        ? (e) => this.handleSubmit('POST', e, this.state)
+        : (e) => this.handleSubmit('PUT', e, this.state, this.props.command.id)
       )}>
         <input type='text' name='keyword' placeholder='keyword' value={this.state.keyword} onChange={this.handleChange} />
         <input type='text' name='response' placeholder='response' value={this.state.response} onChange={this.handleChange} />

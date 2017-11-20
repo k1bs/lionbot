@@ -16,6 +16,7 @@ class CommandList extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.setEditing = this.setEditing.bind(this)
     this.getAllCommands = this.getAllCommands.bind(this)
+    this.deleteCommand = this.deleteCommand.bind(this)
   }
 
   componentDidMount () {
@@ -40,8 +41,7 @@ class CommandList extends Component {
     })
   }
 
-  handleFormSubmit (method, e, data, id) {
-    e.preventDefault()
+  handleFormSubmit (method, data, id) {
     fetch(`/api/commands/${id || ''}`, {
       method: method,
       credentials: 'include',
@@ -60,13 +60,24 @@ class CommandList extends Component {
     }).catch(err => console.log(err))
   }
 
+  deleteCommand (id) {
+    fetch(`/api/commands/${id}`, {
+      method: 'DELETE',
+      credentials: 'include'
+    }).then(res => res.json())
+      .then(res => {
+        console.log(res)
+        this.getAllCommands()
+      }).catch(err => console.log(err))
+  }
+
   renderCommandList () {
     console.log(this.state)
     if (this.state.dataLoaded) {
       return this.state.commands.map(command => {
         if (command.id === this.state.currentlyEditing) {
           return <CommandForm command={command} handleFormSubmit={this.handleFormSubmit} isAdd={false} key={command.id} />
-        } else return <Command key={command.id} command={command} auth={this.state.auth} setEditing={this.setEditing} />
+        } else return <Command key={command.id} command={command} auth={this.state.auth} deleteCommand={this.deleteCommand} setEditing={this.setEditing} />
       })
     } else return <p>Loading...</p>
   }
