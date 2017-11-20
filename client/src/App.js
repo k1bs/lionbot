@@ -13,6 +13,8 @@ class App extends Component {
       auth: false,
       user: null
     }
+    this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
+    this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
   }
 
   handleLoginSubmit (e, data) {
