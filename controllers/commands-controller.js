@@ -28,4 +28,16 @@ commandController.create = (req, res, next) => {
       data: command
     }))
 }
+
+commandController.update = (req, res, next) => {
+  Command.update({
+    keyword: req.body.keyword,
+    response: req.body.response
+  }, req.user.id)
+    .then(command => res.json({
+      message: 'Command updated succesfully!',
+      data: command
+    }))
+}
+
 module.exports = commandController

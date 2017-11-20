@@ -32,4 +32,5 @@ Command.update = (command, id) => {
     [command.keyword, command.response, id]
   )
 }
+
 module.exports = Command
