@@ -26,3 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.toggle {
+  border: 10px solid red;
+}
+
+.enabled {
+  border: 45px solid blue;
+}

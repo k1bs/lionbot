@@ -7,6 +7,7 @@ import CommandList from './components/CommandList'
 import Register from './components/Register'
 import Account from './components/Account'
 import Login from './components/Login'
+import './App.css'
 
 const fetch = window.fetch
 
