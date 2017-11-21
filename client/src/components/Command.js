@@ -13,6 +13,9 @@ const Command = (props) => {
         ? <div>
           <span className='edit' onClick={() => props.setEditing(props.command.id)}>Edit</span>
           <span className='delete-span' onClick={() => props.deleteCommand(props.command.id)}>Delete</span>
+          <button className='toggle' onClick={() => {
+            console.log(`Works!`)
+            props.enableToggle(props.command.id)}}>Enbaled ?</button>
         </div>
         : ''}
     </div>

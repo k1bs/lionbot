@@ -53,7 +53,7 @@ Command.destroy = (id) => {
 Command.enableToggle = (id) => {
   return db.oneOrNone(
     `UPDATE commands
-    SET enabled = !enabled
+    SET enabled = NOT enabled
     WHERE id = $1
     RETURNING *`, id)
 }

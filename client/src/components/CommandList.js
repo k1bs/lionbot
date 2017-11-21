@@ -20,6 +20,7 @@ class CommandList extends Component {
     this.setEditing = this.setEditing.bind(this)
     this.getAllCommands = this.getAllCommands.bind(this)
     this.deleteCommand = this.deleteCommand.bind(this)
+    this.enableToggle = this.enableToggle.bind(this)
   }
 
 // when the component mounts, we're pulling commands from the backend and set the data in state.
@@ -79,6 +80,17 @@ class CommandList extends Component {
       }).catch(err => console.log(err))
   }
 
+  enableToggle (id) {
+    fetch(`/api/commands/enable/${id}`, {
+      method: 'PUT',
+      credentials: 'include'
+    }).then(res => res.json())
+      .then(res => {
+        console.log(res)
+        this.getAllCommands()
+      }).catch(err => console.log(err))
+  }
+
 // if the commands exist, we're rendering them, if not we'll render a "Loading..." message
   renderCommandList () {
     console.log(this.state)
@@ -86,7 +98,7 @@ class CommandList extends Component {
       return this.state.commands.map(command => {
         if (command.id === this.state.currentlyEditing) {
           return <CommandForm command={command} handleFormSubmit={this.handleFormSubmit} isAdd={false} key={command.id} />
-        } else return <Command key={command.id} command={command} auth={this.state.auth} deleteCommand={this.deleteCommand} setEditing={this.setEditing} />
+        } else return <Command key={command.id} command={command} auth={this.state.auth} deleteCommand={this.deleteCommand} setEditing={this.setEditing} enableToggle={this.enableToggle}/>
       })
     } else return <p>Loading...</p>
   }
