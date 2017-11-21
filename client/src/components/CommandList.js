@@ -39,13 +39,14 @@ class CommandList extends Component {
     }).catch(err => console.log(err))
   }
 
+// setting the state to currently editing
   setEditing (id) {
     this.setState({
       currentlyEditing: id
     })
   }
 
-// created a handleFormSubmit method
+// created a handleFormSubmit method - making another api call to re-get all of the commands
   handleFormSubmit (method, data, id) {
     fetch(`/api/commands/${id || ''}`, {
       method: method,
@@ -59,6 +60,7 @@ class CommandList extends Component {
     .then(res => {
       console.log(res)
       this.setState({
+        // once a new command is submitted, set the currentlyEditing state to null
         currentlyEditing: null
       })
       this.getAllCommands()
