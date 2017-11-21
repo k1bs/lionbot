@@ -8,6 +8,7 @@ import Register from './components/Register'
 import Account from './components/Account'
 import Login from './components/Login'
 import './App.css'
+import About from './components/About'
 
 const fetch = window.fetch
 
@@ -111,6 +112,7 @@ class App extends Component {
                 ? <Redirect to='/login' />
                 : <CommandList auth={this.state.auth} />
               )} />
+            <Route exact path='/about' component={About} />
           </div>
           <Footer />
         </div>
