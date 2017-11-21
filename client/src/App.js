@@ -7,6 +7,7 @@ import CommandList from './components/CommandList'
 import Register from './components/Register'
 import Account from './components/Account'
 import Login from './components/Login'
+import './App.css'
 
 const fetch = window.fetch
 
@@ -87,7 +88,7 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
-          <Header logout={this.logout} />
+          <Header logout={this.logout} auth={this.state.auth} />
           <div className='container'>
             <Route exact path='/register' render={() => (
               this.state.auth
