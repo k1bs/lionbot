@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 
 // define comparpass
 function comparePass (userPassword, databasePassword) {
-  // use bcrypt's compareSync to match userpassword and databasePassword
+  // use bcrypt's compareSync to match front end and databasePassword
   // returns boolean
   return bcrypt.compareSync(userPassword, databasePassword)
 }
