@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import Command from './Command'
 import CommandForm from './CommandForm'
 
+// called fetch becasue atom uses window.fetch
 const fetch = window.fetch
 
+// setting up CommandList Component
 class CommandList extends Component {
   constructor (props) {
     super(props)
@@ -13,12 +15,14 @@ class CommandList extends Component {
       auth: props.auth,
       currentlyEditing: null
     }
+    // binding functions to the component
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.setEditing = this.setEditing.bind(this)
     this.getAllCommands = this.getAllCommands.bind(this)
     this.deleteCommand = this.deleteCommand.bind(this)
   }
 
+// when the component mounts, we're pulling commands from the backend and set the data in state.
   componentDidMount () {
     this.getAllCommands()
   }
@@ -41,6 +45,7 @@ class CommandList extends Component {
     })
   }
 
+// created a handleFormSubmit method
   handleFormSubmit (method, data, id) {
     fetch(`/api/commands/${id || ''}`, {
       method: method,
@@ -60,6 +65,7 @@ class CommandList extends Component {
     }).catch(err => console.log(err))
   }
 
+// when the delete button is clicked, it will make a delete request to /api/commands/${id}
   deleteCommand (id) {
     fetch(`/api/commands/${id}`, {
       method: 'DELETE',
@@ -71,6 +77,7 @@ class CommandList extends Component {
       }).catch(err => console.log(err))
   }
 
+// if the commands exist, we're rendering them, if not we'll render a "Loading..." message
   renderCommandList () {
     console.log(this.state)
     if (this.state.dataLoaded) {
@@ -82,6 +89,7 @@ class CommandList extends Component {
     } else return <p>Loading...</p>
   }
 
+// if this.state.auth is true, render the form passing in the handleFormSubmit method
   render () {
     return (
       <div className='commandlist'>
