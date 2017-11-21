@@ -59,4 +59,11 @@ commandController.delete = (req, res, next) => {
     }))
 }
 
+commandController.enableToggle = (req, res, next) => {
+  Command.enableToggle(req.params.id)
+   .then(res => res.json({
+     message: `Command has been ${req.body.enabled} !`
+   }))
+}
+
 module.exports = commandController
