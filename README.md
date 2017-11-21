@@ -1,4 +1,5 @@
 # LionBot
+[![GitHub license](https://img.shields.io/github/license/k1bs/lionbot.svg)](https://github.com/k1bs/lionbot/blob/master/LICENSE)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ![wireframe](./assets/wireframe1.jpg)
