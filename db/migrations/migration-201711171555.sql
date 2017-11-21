@@ -1,6 +1,9 @@
+-- Remove previous tables
 DROP TABLE IF EXISTS users_commands;
 DROP TABLE IF EXISTS commands;
 DROP TABLE IF EXISTS users;
+
+-- Create tables
 
 CREATE TABLE IF NOT EXISTS commands (
   id SERIAL PRIMARY KEY,
