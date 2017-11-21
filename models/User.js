@@ -1,7 +1,10 @@
+// Import db configuration
 const db = require('../db/config')
 
+// declare User as empty object
 const User = {}
 
+// Add findByUserName method
 User.findByUserName = userName => {
   return db.oneOrNone(`
     SELECT * FROM users
@@ -9,6 +12,7 @@ User.findByUserName = userName => {
   `, [userName])
 }
 
+// Add create user method
 User.create = user => {
   return db.one(`
     INSERT INTO users
@@ -18,4 +22,5 @@ User.create = user => {
   `, [user.username, user.email, user.password_digest])
 }
 
+// Export user object
 module.exports = User
