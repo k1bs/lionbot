@@ -3,10 +3,13 @@ const User = require('../models/User')
 
 const usersController = {}
 
+// define create method
 usersController.create = (req, res, next) => {
-  console.log(req.body)
+  // Generate salt
   const salt = bcrypt.genSaltSync()
+  // generate hash from salt and input field
   const hash = bcrypt.hashSync(req.body.password, salt)
+  // Add to user table
   User.create({
     username: req.body.username,
     email: req.body.email,
