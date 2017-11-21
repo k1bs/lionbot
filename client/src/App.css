@@ -1,28 +1,133 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 160px;
+  background-color: #ABADAD;
+}
+
+.logo-div {
+  background-color: #001827;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  padding: 15px;
+  letter-spacing: -1px;
+}
+
+.command {
+  padding: 20px;
+  margin: 10px 10px 0px 10px;
+  background-color: white;
+  border-radius: 7px;
+}
+
+.command h3 {
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 3px 20px rgba(0,0,0,0.4);
+}
+
+footer {
+  background-color: #001827;
+  color: white;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+nav {
+  background-color: white;
+  text-align: center;
+  border-bottom: 10px solid #001827;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-.App-title {
-  font-size: 1.5em;
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
 }
 
-.App-intro {
-  font-size: large;
+li {
+  padding: 10px;
+  background-color: white;
+  border: 3px solid white;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+li:hover {
+  border-bottom: 3px solid #86FFC6;
 }

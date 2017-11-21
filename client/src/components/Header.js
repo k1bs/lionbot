@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 const Header = (props) => {
   return (
     <header>
+      <div className='logo-div'>
+        <h1>LionBot</h1>
+      </div>
       <nav>
         <ul>
           <li><Link to='/commandlist'>Dashboard</Link></li>
