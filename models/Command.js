@@ -1,7 +1,10 @@
+// import db file to let model know which databse to query
 const db = require('../db/config')
 
+// initializes Command object that will hold all query methods
 const Command = {}
 
+// .findAll will query databse for all commands for specific user
 Command.findAll = (userId) => {
   return db.query(
     `SELECT * FROM commands
@@ -10,11 +13,13 @@ Command.findAll = (userId) => {
     ORDER BY id ASC`, [userId])
 }
 
+// .findById will query database for command by id
 Command.findById = (id) => {
   return db.one(
     `SELECT * FROM commands WHERE id = $1`, id)
 }
 
+// .create will import new command in databse
 Command.create = (command, userId) => {
   return db.one(
     `INSERT into commands
@@ -25,6 +30,7 @@ Command.create = (command, userId) => {
     [command.keyword, command.response, userId])
 }
 
+// .update will update command by id
 Command.update = (command, id) => {
   return db.oneOrNone(
     `UPDATE commands SET
@@ -36,6 +42,7 @@ Command.update = (command, id) => {
   )
 }
 
+// .destroy will remove command from database
 Command.destroy = (id) => {
   return db.none(
     `DELETE from commands
