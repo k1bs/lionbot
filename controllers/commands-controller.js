@@ -61,9 +61,13 @@ commandController.delete = (req, res, next) => {
 
 commandController.enableToggle = (req, res, next) => {
   Command.enableToggle(req.params.id)
-   .then(res => {
-     console.log(res)
-     console.log(`${res.keyword} command enabled? ${res.enabled}`)
+   .then(command => {
+     console.log(command)
+     console.log(`${command.keyword} command enabled? ${command.enabled}`)
+     res.json({
+       message: 'command toggled successfully',
+       data: command
+     })
    })
 }
 

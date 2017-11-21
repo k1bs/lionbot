@@ -13,8 +13,7 @@ class CommandList extends Component {
       commands: [],
       dataLoaded: false,
       auth: props.auth,
-      currentlyEditing: null,
-      enabled: false
+      currentlyEditing: null
     }
     // binding functions to the component
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
@@ -88,9 +87,6 @@ class CommandList extends Component {
     }).then(res => res.json())
       .then(res => {
         console.log(res)
-        this.setState({
-          enabled: true
-        })
         this.getAllCommands()
       }).catch(err => console.log(err))
   }
