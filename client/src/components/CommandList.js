@@ -13,7 +13,8 @@ class CommandList extends Component {
       commands: [],
       dataLoaded: false,
       auth: props.auth,
-      currentlyEditing: null
+      currentlyEditing: null,
+      enabled: false
     }
     // binding functions to the component
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
@@ -87,6 +88,9 @@ class CommandList extends Component {
     }).then(res => res.json())
       .then(res => {
         console.log(res)
+        this.setState({
+          enabled: true
+        })
         this.getAllCommands()
       }).catch(err => console.log(err))
   }
@@ -98,7 +102,7 @@ class CommandList extends Component {
       return this.state.commands.map(command => {
         if (command.id === this.state.currentlyEditing) {
           return <CommandForm command={command} handleFormSubmit={this.handleFormSubmit} isAdd={false} key={command.id} />
-        } else return <Command key={command.id} command={command} auth={this.state.auth} deleteCommand={this.deleteCommand} setEditing={this.setEditing} enableToggle={this.enableToggle}/>
+        } else return <Command key={command.id} command={command} auth={this.state.auth} deleteCommand={this.deleteCommand} setEditing={this.setEditing} enableToggle={this.enableToggle} enabled={this.state.enabled} />
       })
     } else return <p>Loading...</p>
   }
