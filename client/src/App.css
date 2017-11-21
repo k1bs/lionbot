@@ -81,6 +81,11 @@ table {
 	display: flex;
 }
 
+.form {
+	align-items: center;
+	justify-content: center;
+}
+
 .command h3 {
   font-weight: 700;
   padding-bottom: 5px;

@@ -37,7 +37,7 @@ class CommandForm extends Component {
 // depending on whether a user is editing a command or creating a command this will render a put or post request
   render () {
     return (
-      <div className='command'>
+      <div className='command form'>
         <form onSubmit={(
           this.props.isAdd
           ? (e) => this.handleSubmit('POST', e, this.state)
