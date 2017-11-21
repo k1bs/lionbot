@@ -3,14 +3,17 @@ import React, { Component } from 'react'
 class Register extends Component {
   constructor (props) {
     super(props)
+    // initialize state as empty strings
     this.state = {
       username: '',
       password: '',
       email: ''
     }
+    // bind handleInputChange to this class
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
+  // as the input values change, they are set in state
   handleInputChange (e) {
     const name = e.target.name
     const value = e.target.value
@@ -19,6 +22,7 @@ class Register extends Component {
     })
   }
 
+  // When the form submits, the state above if is passed as arguments to handleRegisterSubmit (which was passed as props)
   render () {
     return (
       <div>
