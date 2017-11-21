@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
+// created links to different pages, added a logout function on click.
 const Header = (props) => {
   return (
     <header>
