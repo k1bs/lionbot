@@ -49,4 +49,13 @@ Command.destroy = (id) => {
     WHERE id = $1`, id)
 }
 
+// .enableToggle will toggle the commands enabled/disabled status
+Command.enableToggle = (id) => {
+  return db.oneOrNone(
+    `UPDATE commands
+    SET enabled = NOT enabled
+    WHERE id = $1
+    RETURNING *`, id)
+}
+
 module.exports = Command

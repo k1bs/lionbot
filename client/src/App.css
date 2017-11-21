@@ -131,3 +131,11 @@ li {
 li:hover {
   border-bottom: 3px solid #86FFC6;
 }
+
+.toggle {
+  border: 10px solid red;
+}
+
+.enabled {
+  border: 45px solid blue;
+}

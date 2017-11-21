@@ -12,6 +12,7 @@ commandRouter.get('/', commandController.index)
 commandRouter.get('/:id', commandController.findById)
 commandRouter.post('/', commandController.create)
 commandRouter.put('/:id', commandController.update)
+commandRouter.put('/enable/:id', commandController.enableToggle)
 commandRouter.delete('/:id', commandController.delete)
 
 // export router file for use in server.js
