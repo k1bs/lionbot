@@ -58,4 +58,5 @@ commandController.delete = (req, res, next) => {
       message: 'Command deleted successfully!'
     }))
 }
+
 module.exports = commandController
