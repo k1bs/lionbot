@@ -71,6 +71,11 @@ table {
   font-size: 50px;
   padding: 15px;
   letter-spacing: -1px;
+	display: flex;
+}
+
+.logo-div h1 {
+	border-bottom: 2px solid #86FFC6;
 }
 
 .command {
@@ -88,7 +93,8 @@ table {
 
 .command h3 {
   font-weight: 700;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
+	font-size: 25px;
 }
 
 .words-module {
@@ -150,10 +156,62 @@ li:hover {
   border-bottom: 3px solid #86FFC6;
 }
 
-.toggle {
-  border: 1px solid red;
+.cursor {
+	cursor: pointer;
 }
 
-.enabled {
-  border: 1px solid blue;
+.icon-module {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+}
+
+/* Below code influenced by fhttps://www.w3schools.com/howto/howto_css_switch.asp */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+}
+
+.switch button {
+	display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: lightgrey;
+  transition: .2s;
+	border-radius: 6px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .2s;
+	border-radius: 20%;
+}
+
+.enabled + .slider {
+  background-color: #86FFC6;
+}
+
+.enabled + .slider {
+  box-shadow: 0 0 1px #86FFC6;
+}
+
+.enabled + .slider:before {
+  transform: translateX(22px);
 }

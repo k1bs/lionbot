@@ -12,12 +12,17 @@ const Command = (props) => {
       {/* a user must be logged in, in order to edit or delete commands && a user cannont delete 'standard' commands  */}
       {(props.auth && !props.command.standard)
         ? <div className='button-module'>
-          <span className='edit' onClick={() => props.setEditing(props.command.id)}>Edit</span>
-          <span className='delete-span' onClick={() => props.deleteCommand(props.command.id)}>Delete</span>
-          <button className={'toggle ' + (props.command.enabled ? 'enabled' : '')} onClick={() => {
-            console.log(`Works!`)
-            props.enableToggle(props.command.id)
-          }}>Enbaled ?</button>
+          <div className='icon-module'>
+            <span className='edit' onClick={() => props.setEditing(props.command.id)}><i className='fa fa-pencil fa-fw cursor' /></span>
+            <span className='delete-span' onClick={() => props.deleteCommand(props.command.id)}><i className='fa fa-trash fa-fw cursor' /></span>
+          </div>
+          <label className='switch'>
+            <button className={'enabled-button ' + (props.command.enabled ? 'enabled' : '')} onClick={() => {
+              console.log(`Works!`)
+              props.enableToggle(props.command.id)
+            }} />
+            <span className='slider' />
+          </label>
         </div>
         : ''}
     </div>
