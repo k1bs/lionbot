@@ -3,13 +3,16 @@ import React, { Component } from 'react'
 class Login extends Component {
   constructor (props) {
     super(props)
+    // initialize the state as empty strings
     this.state = {
       username: '',
       password: ''
     }
+    // bind input change to this class
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
+  // when input values change, set the state
   handleInputChange (e) {
     const name = e.target.name
     const value = e.target.value
@@ -18,6 +21,7 @@ class Login extends Component {
     })
   }
 
+  // when form is submitted, call handleLoginSubmit (which was passed as props) with state as an argument
   render () {
     return (
       <div>
