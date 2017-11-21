@@ -1,5 +1,6 @@
 import React from 'react'
 
+// created basic landing page
 const Home = () => {
   return (
     <div className='home'>
