@@ -78,11 +78,25 @@ table {
   margin: 10px 10px 0px 10px;
   background-color: white;
   border-radius: 7px;
+	display: flex;
 }
 
 .command h3 {
   font-weight: 700;
   padding-bottom: 5px;
+}
+
+.words-module {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.button-module {
+	flex: 0;
+	display: flex;
+	flex-direction: column;
 }
 
 .logout {
@@ -95,7 +109,6 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0px 3px 20px rgba(0,0,0,0.4);
 }
 
 footer {
@@ -119,11 +132,11 @@ a {
 ul {
   list-style-type: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 li {
-  padding: 10px;
+  padding: 10px 5px;
   background-color: white;
   border: 3px solid white;
 }
@@ -133,9 +146,9 @@ li:hover {
 }
 
 .toggle {
-  border: 10px solid red;
+  border: 1px solid red;
 }
 
 .enabled {
-  border: 45px solid blue;
+  border: 1px solid blue;
 }
