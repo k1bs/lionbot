@@ -1,7 +1,11 @@
+// import Command model file for databse queries
 const Command = require('../models/Command')
 
+// initializes controller object that will hold controller methods
 const commandController = {}
 
+// .index method will handle requests to the root path
+// will send back all commands for user
 commandController.index = (req, res, next) => {
   Command.findAll(req.user.id)
     .then(commands => res.json({
@@ -10,6 +14,8 @@ commandController.index = (req, res, next) => {
     }))
 }
 
+// .findById method will be used to handle requests to the '/:id' path
+// will send back data for :id
 commandController.findById = (req, res, next) => {
   Command.findById(req.params.id)
     .then(command => res.json({
@@ -18,6 +24,8 @@ commandController.findById = (req, res, next) => {
     }))
 }
 
+// .create method will handle requests to the root path
+// will import created command data into database
 commandController.create = (req, res, next) => {
   Command.create({
     keyword: req.body.keyword,
@@ -29,6 +37,8 @@ commandController.create = (req, res, next) => {
     }))
 }
 
+// .update method will handle requests to the '/:id' path
+// will update command by id
 commandController.update = (req, res, next) => {
   Command.update({
     keyword: req.body.keyword,
@@ -40,6 +50,8 @@ commandController.update = (req, res, next) => {
     }))
 }
 
+// .delete method will handle requests to the '/:id ' path
+// will delete command from database
 commandController.delete = (req, res, next) => {
   Command.destroy(req.params.id)
     .then(() => res.json({
