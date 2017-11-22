@@ -216,3 +216,19 @@ li:hover {
 .enabled + .slider:before {
   transform: translateX(22px);
 }
+
+.about {
+	background-color: #001827;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 50px;
+	padding: 15px;
+	letter-spacing: -1px;
+	display: flex;
+}
+
+.about img {
+	max-width: 100px;
+	height: auto;
+	float: right;
+}
