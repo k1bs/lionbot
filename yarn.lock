@@ -201,6 +201,10 @@ js-string-escape@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/js-string-escape/-/js-string-escape-1.0.1.tgz#e2625badbc0d67c7533e9edc1068c587ae4137ef"
 
+lodash@^4.17.4:
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
 manakin@~0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/manakin/-/manakin-0.5.1.tgz#c4a7116f6b00df3d5f1a37ad3ca515d22065a658"
@@ -451,6 +455,12 @@ statuses@~1.3.1:
 through@2:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
+
+twitch-bot@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/twitch-bot/-/twitch-bot-1.0.8.tgz#aac652c2f942d01a69136f4085581ab30c9b522a"
+  dependencies:
+    lodash "^4.17.4"
 
 type-is@~1.6.15:
   version "1.6.15"
