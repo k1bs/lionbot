@@ -5,7 +5,7 @@ const db = require('../db/config')
 const Command = {}
 
 // .findAll will query databse for all commands for specific user
-Command.findAll = (userId) => {
+Command.findAllByUserId = (userId) => {
   return db.query(
     `SELECT * FROM commands
     WHERE user_id = $1
@@ -56,6 +56,20 @@ Command.enableToggle = (id) => {
     SET enabled = NOT enabled
     WHERE id = $1
     RETURNING *`, id)
+}
+
+// .findAll will return all commands (for testing)
+Command.findAll = () => {
+  return db.query(
+    `SELECT * FROM commands`
+  )
+}
+
+// .destroyAll will erase everything from the table (for testing)
+Command.destroyAll = () => {
+  return db.none(
+    `DELETE FROM commands`
+  )
 }
 
 module.exports = Command

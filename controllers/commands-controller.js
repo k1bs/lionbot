@@ -6,8 +6,8 @@ const commandController = {}
 
 // .index method will handle requests to the root path
 // will send back all commands for user
-commandController.index = (req, res, next) => {
-  Command.findAll(req.user.id)
+commandController.findAllByUserId = (req, res, next) => {
+  Command.findAllByUserId(req.user.id)
     .then(commands => res.json({
       message: 'Ok!',
       data: commands
@@ -31,7 +31,7 @@ commandController.create = (req, res, next) => {
     keyword: req.body.keyword,
     response: req.body.response
   }, req.user.id)
-    .then(command => res.json({
+    .then(command => res.status(201).json({
       message: 'ok!',
       data: command
     }))
@@ -69,6 +69,16 @@ commandController.enableToggle = (req, res, next) => {
        data: command
      })
    })
+}
+
+commandController.index = (req, res, next) => {
+  Command.findAll()
+    .then(commands => {
+      res.json({
+        message: 'ok',
+        data: commands
+      })
+    })
 }
 
 module.exports = commandController

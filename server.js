@@ -93,3 +93,6 @@ app.use((err, req, res, next) => {
     message: err.message
   })
 })
+
+// export app for testing
+module.exports = app

@@ -8,7 +8,8 @@ const commandRouter = express.Router()
 const commandController = require('../controllers/commands-controller')
 
 // detail of which controller method with handle certain requests to below paths
-commandRouter.get('/', commandController.index)
+commandRouter.get('/', commandController.findAllByUserId)
+commandRouter.get('/test', commandController.index)
 commandRouter.get('/:id', commandController.findById)
 commandRouter.post('/', commandController.create)
 commandRouter.put('/:id', commandController.update)
