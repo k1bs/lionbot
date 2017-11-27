@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <footer>
-      <h2>Made by <Link to='/about'>AOA Digital</Link></h2>
+      <h2>Made by <h5><Link to='/about'>AOA Digital</Link></h5></h2>
     </footer>
   )
 }
