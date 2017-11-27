@@ -17,7 +17,6 @@ class Header extends React.Component {
     } else {
       return (
         <ul>
-          <li><Link to='/commandlist'>Dashboard</Link></li>
           <li><Link to='/login'>Login</Link></li>
           <li><Link to='/register'>Register</Link></li>
           <li><Link to='/account'>Account</Link></li>
