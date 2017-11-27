@@ -1,5 +1,7 @@
 // import Command model file for databse queries
 const Command = require('../models/Command')
+const botBuilder = require('../services/bot/bot-logic')
+const bot = botBuilder('k1bsTV', [])
 
 // initializes controller object that will hold controller methods
 const commandController = {}
@@ -31,10 +33,14 @@ commandController.create = (req, res, next) => {
     keyword: req.body.keyword,
     response: req.body.response
   }, req.user.id)
-    .then(command => res.status(201).json({
-      message: 'ok!',
-      data: command
-    }))
+    .then(() => Command.findAll())
+    .then(commands => {
+      bot.updateCommandArray(commands)
+      res.status(201).json({
+        message: 'ok!',
+        data: commands
+      })
+    })
 }
 
 // .update method will handle requests to the '/:id' path
@@ -44,31 +50,40 @@ commandController.update = (req, res, next) => {
     keyword: req.body.keyword,
     response: req.body.response
   }, req.params.id)
-    .then(command => res.json({
-      message: 'Command updated successfully!',
-      data: command
-    }))
+  .then(() => Command.findAll())
+  .then(commands => {
+    bot.updateCommandArray(commands)
+    res.status(201).json({
+      message: 'ok!',
+      data: commands
+    })
+  })
 }
 
 // .delete method will handle requests to the '/:id ' path
 // will delete command from database
 commandController.delete = (req, res, next) => {
   Command.destroy(req.params.id)
-    .then(() => res.json({
-      message: 'Command deleted successfully!'
-    }))
+  .then(() => Command.findAll())
+  .then(commands => {
+    bot.updateCommandArray(commands)
+    res.status(201).json({
+      message: 'ok!',
+      data: commands
+    })
+  })
 }
 
 commandController.enableToggle = (req, res, next) => {
   Command.enableToggle(req.params.id)
-   .then(command => {
-     console.log(command)
-     console.log(`${command.keyword} command enabled? ${command.enabled}`)
-     res.json({
-       message: 'command toggled successfully',
-       data: command
-     })
-   })
+  .then(() => Command.findAll())
+  .then(commands => {
+    bot.updateCommandArray(commands)
+    res.status(201).json({
+      message: 'ok!',
+      data: commands
+    })
+  })
 }
 
 commandController.index = (req, res, next) => {

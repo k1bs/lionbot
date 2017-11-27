@@ -1,6 +1,3 @@
-const EventEmitter = require('events').EventEmitter
-const testEmitter = new EventEmitter()
-
 const botBuilder = require('./bot-logic')
 
 const commandArray = [{
@@ -25,12 +22,8 @@ const falseArray = [{
   enabled: true
 }]
 
-botBuilder('k1bsTV', falseArray)
-testEmitter.on('restart', () => {
-  console.log('restart received')
-})
-testEmitter.emit('restart')
+let bot = botBuilder('k1bsTV', falseArray)
 
 setTimeout(() => {
-  botBuilder('k1bsTV', commandArray)
+  bot.updateCommandArray(commandArray)
 }, 1000)

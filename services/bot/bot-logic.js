@@ -1,30 +1,37 @@
 const TwitchBot = require('twitch-bot')
 
 function botBuilder (channel, commandArray) {
-  const Bot = new TwitchBot({
+  const bot = new TwitchBot({
     username: 'AOALionBot',
     oauth: 'oauth:ip7kzausrryqclqf8qvbfi0tft2enc',
     channel: channel
   })
 
-  Bot.on('join', () => {
-    console.log('joined!')
-    commandArray.map(command => {
+  bot.mapArray = function (array) {
+    array.map(command => {
       console.log(command)
       if (command.enabled) {
-        Bot.on('message', chatter => {
+        this.on('message', chatter => {
           if (chatter.message === command.keyword) {
-            Bot.say(command.response)
+            this.say(command.response)
           }
         })
       }
     })
+  }
+
+  bot.updateCommandArray = function (array) {
+    this.removeAllListeners('message')
+    console.log('removing listeners')
+    this.mapArray(array)
+  }
+
+  bot.on('join', () => {
+    console.log('joined!')
+    bot.mapArray(commandArray)
   })
-  Bot.on('restart', () => {
-    console.log('restarting!')
-    Bot.removeAllListeners('message')
-    Bot.close()
-  })
+
+  return bot
 }
 
 module.exports = botBuilder
