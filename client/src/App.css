@@ -227,10 +227,51 @@ li:hover {
 	display: flex;
 }
 
+h5:hover {
+	color:  #86FFC6;
+}
+
 .about img {
 	max-width: 100px;
 	height: auto;
-	float: right;
+	float: left;
+	padding: 10px;
+	margin-left: 10px;
+	border-radius: 25px;
+}
+
+.about h4 {
+	font-size: 35px;
+	padding-top: 50px;
+	padding-bottom: 50px
+}
+
+ .about h2 {
+	font-size: 25px;
+}
+
+.about i {
+	padding: 5px;
+}
+
+input {
+	width: 100%;
+	padding: 10px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	font-size: 15px;
+	background-color: white;
+  color: black;
+  border: 2px solid #001827;
+	/*visibility: hidden;*/
+	/*display: none;*/
+}
+
+.form [type='submit'] {
+	width: 25%;
+	display: flex;
+	position: center;
+	text-align: center;
 }
 
 .home_heading{
