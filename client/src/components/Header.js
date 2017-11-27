@@ -17,11 +17,9 @@ class Header extends React.Component {
     } else {
       return (
         <ul>
+          <li><Link to='/docs'>Docs</Link></li>
           <li><Link to='/login'>Login</Link></li>
           <li><Link to='/register'>Register</Link></li>
-          <li><Link to='/account'>Account</Link></li>
-          <li><Link to='/docs'>Docs</Link></li>
-          <li><span className='logout' onClick={() => this.props.logout()}>Logout</span></li>
         </ul>
       )
     }
