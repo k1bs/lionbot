@@ -1,9 +1,11 @@
 import React from 'react'
 
 const Account = (props) => {
+  console.log(props.user)
   return (
-    <div>
-      <h1>Sup, {props.user.username}?</h1>
+    <div className='command account-container'>
+      <h3>{props.user.username}</h3>
+      <h6>{props.user.email}</h6>
     </div>
   )
 }

@@ -303,6 +303,19 @@ input {
   margin: auto;
 }
 
+.account-container {
+	display: flex;
+	flex-direction: column;
+	background: white;
+	justify-content: center;
+	padding: 30px;
+}
+
+.account-container h3 {
+	font-size: 40px;
+	font-family: 'Montserrat';
+}
+
 #lionbot_logo {
   background-image: url('./img/LionBotLogo.png');
   background-repeat: no-repeat;
