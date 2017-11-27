@@ -8,44 +8,47 @@ class CommandForm extends Component {
       keyword: props.command ? props.command.keyword : '',
       response: props.command ? props.command.response : '',
       enabled: props.command ? props.command.enabled : '',
-      showButton: true
+      show: true
     }
     // binding handleChange and handleSubmit to the component
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
 // ********************** idk ********************
-
-  displayForm (props) {
-    if (this.state.showButton === true) {
-      return (
-        <button className='showButton'>+</button>
-      )
-      // render plus sign button and change showButton state to false
-    } else if (this.state.showButton === false) {
-      return (
-        <form onSubmit={(
-              this.props.isAdd
-              ? (e) => this.handleSubmit('POST', e, this.state)
-              : (e) => this.handleSubmit('PUT', e, this.state, this.props.command.id)
-            )}>
-          <input type='text' name='keyword' placeholder='Command' value={this.state.keyword} onChange={this.handleChange} />
-          <input type='text' name='response' placeholder='Response' value={this.state.response} onChange={this.handleChange} />
-          <input type='submit' value='Submit' />
-        </form>
-      )
-      // show form and change showButton state to true
-    }
-    // let form = {
-    //   keyword: props.command ? props.command.keyword : '',
-    //   response: props.command ? props.command.response : '',
-    //   enabled: props.command ? props.command.enabled : ''
-    // }
-    // this.setState({
-    //   form: form
-    // })
+  handleClick () {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }))
   }
+
+//   displayForm (props) {
+//     if (this.state.showButton === true) {
+//       return (
+//          <button className='showButton'>+</button>
+//         this.setState = {
+//           showButton: false
+//       )
+//       // render plus sign button and change showButton state to false
+//     } else if (this.state.showButton === false) {
+//       return (
+//         <form onSubmit={(
+//               this.props.isAdd
+//               ? (e) => this.handleSubmit('POST', e, this.state)
+//               : (e) => this.handleSubmit('PUT', e, this.state, this.props.command.id)
+//             )}>
+//           <input type='text' name='keyword' placeholder='Command' value={this.state.keyword} onChange={this.handleChange} />
+//           <input type='text' name='response' placeholder='Response' value={this.state.response} onChange={this.handleChange} />
+//           <input type='submit' value='Submit' />
+//         </form>
+//         this.setState = {
+//           showButton: true
+//       )
+//       // show form and change showButton state to true
+//     }
+//   }
+// }}
   // **********************************************
 
 // calling a sythetic event when the form changes specifically targeting the name and value fields
@@ -73,16 +76,18 @@ class CommandForm extends Component {
     return (
       <div className='form'>
         <div className='command form'>
-          <button className='showButton'>+</button>
-          <form onSubmit={(
+          <button className='showButton' onClick={this.handleClick}> {this.state.isToggleOn ? 'ON' : 'OFF'} </button>
+          <div className={this.props.shouldHide ? 'hidden' : ''} >
+            <form onSubmit={(
               this.props.isAdd
               ? (e) => this.handleSubmit('POST', e, this.state)
               : (e) => this.handleSubmit('PUT', e, this.state, this.props.command.id)
             )}>
-            <input type='text' name='keyword' placeholder='Command' value={this.state.keyword} onChange={this.handleChange} />
-            <input type='text' name='response' placeholder='Response' value={this.state.response} onChange={this.handleChange} />
-            <input type='submit' value='Submit' />
-          </form>
+              <input type='text' name='keyword' placeholder='Command' value={this.state.keyword} onChange={this.handleChange} />
+              <input type='text' name='response' placeholder='Response' value={this.state.response} onChange={this.handleChange} />
+              <input type='submit' value='Submit' />
+            </form>
+          </div>
         </div>
       </div>
     )
