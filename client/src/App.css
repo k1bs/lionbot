@@ -232,3 +232,41 @@ li:hover {
 	height: auto;
 	float: right;
 }
+
+.home_heading{
+  color:#86FFC6;
+}
+
+.aoa_digital:hover {
+  color:#86FFC6;
+  transition: .8s;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home h1 {
+  font-size: 50pt;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  margin: auto;
+}
+
+.home div {
+  background-color: #001827;
+  border-left: transparent;
+  width: 900px;
+  margin: auto;
+}
+
+#lionbot_logo {
+  background-image: url('./img/LionBotLogo.png');
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  margin-top: 30px;
+}
