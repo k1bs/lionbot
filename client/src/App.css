@@ -386,7 +386,8 @@ code {
 	width: 65%;
 	height: auto;
 	border-radius: 8px;
-  
+}
+
 .hidden {
 	display: none;
 }
