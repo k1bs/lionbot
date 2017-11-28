@@ -124,6 +124,7 @@ main {
 
 .add-button:hover {
 	color: #86FFC6;
+	transition: all 0.15s;
 }
 
 .button-module {
@@ -183,6 +184,7 @@ li {
 
 li:hover {
   border-bottom: 3px solid #86FFC6;
+	transition: all 0.15s;
 }
 
 .cursor {
@@ -348,6 +350,7 @@ input[type=text]:hover, input[type=text]:focus {
 
 i:hover {
 	color: #86FFC6;
+	transition: all 0.15s;
 }
 
 .docs-container {

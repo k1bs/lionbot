@@ -1,16 +1,19 @@
-/////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////
 //                <--Server.js-->                     //
 //     This file is where our server is created.      //
 //          The LionBot app starts here,              //
 // importing all necessary pkgs./files to run the app //
 //                                                    //
-////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////
 
 // express package: will initialize the usage of express, our back-end framework
 const express = require('express')
 
 // morgan package: middleware used to log a console message everytime a request is made
 const logger = require('morgan')
+
+// path
+const path = require('path')
 
 // body-parser: allows us to parse data the way we want (JSON, plain text) before using it
 // neccessary to use req.body
@@ -67,7 +70,7 @@ app.listen(PORT, () => {
 
 // sends this message when rooth path is accessed
 app.get('/', (req, res) => {
-  res.send('🤖 LionBot is alive !')
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 // imports auth-routes file to use for '/api/auth' path requests
