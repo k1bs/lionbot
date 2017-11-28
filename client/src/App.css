@@ -353,6 +353,7 @@ input[type=text]:hover, input[type=text]:focus {
   font-family: 'Montserrat', sans-serif;
   color: white;
   margin: auto;
+  margin-bottom: 35px;
 }
 
 .home div {
@@ -360,6 +361,7 @@ input[type=text]:hover, input[type=text]:focus {
   border-left: transparent;
   width: 1100px;
   margin: auto;
+  margin-bottom: 25px;
 }
 
 .account-container {
@@ -385,7 +387,32 @@ i:hover {
   width: 400px;
   height: 500px;
   margin: auto;
-  margin-top: 30px;
+}
+
+.chatBox {
+  background-image: url('./img/chatBox.png');
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 300px;
+}
+
+.chatBox2 {
+  background-image: url('./img/chatBox.png');
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+}
+
+.chatBoxContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.chatBox p, .chatBox2 p {
+  margin-top: 24px;
+  font-size: 22pt;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .hidden {
