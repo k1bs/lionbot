@@ -104,10 +104,27 @@ table {
 	justify-content: center;
 }
 
+.add-button {
+	margin: 10px 10px 0px 10px;
+	height: 35px;
+	width: 35px;
+	background-color: white;
+	border-radius: 7px;
+	border: none;
+	cursor: pointer;
+}
+
+.add-button:hover {
+	color: #86FFC6;
+}
+
 .button-module {
 	flex: 0;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
 }
 
 .logout {
@@ -222,6 +239,9 @@ li:hover {
 	padding: 15px;
 	letter-spacing: -1px;
 	display: flex;
+	margin-bottom: -10px;
+	height: available;
+	flex: 1;
 }
 
 h5:hover {
@@ -229,22 +249,28 @@ h5:hover {
 }
 
 .about img {
-	max-width: 100px;
-	height: auto;
-	float: left;
-	padding: 10px;
-	margin-left: 10px;
+	height: 100px;
+	width: auto;
+	/*float: left;*/
+	padding: 10px 10px 10px 0;
+	/*margin-left: 10px;*/
 	border-radius: 25px;
 }
 
 .about h4 {
 	font-size: 35px;
-	padding-top: 50px;
-	padding-bottom: 50px
+	/*padding-top: 50px;
+	padding-bottom: 50px*/
+}
+
+.person-container {
+	display: flex;
+	align-items: center;
 }
 
  .about h2 {
-	font-size: 25px;
+	font-size: 28px;
+	margin-bottom: 20px;
 }
 
 .about i {
@@ -264,11 +290,16 @@ input {
 	/*display: none;*/
 }
 
+input[type=text]:hover, input[type=text]:focus {
+	border-color: lightgrey;
+}
+
 .form [type='submit'] {
-	width: 25%;
-	display: flex;
+	width: 100px;
+	/*display: flex;*/
 	position: center;
 	text-align: center;
+	cursor: pointer;
 }
 
 .home_heading{
@@ -313,6 +344,10 @@ input {
 	font-family: 'Montserrat';
 }
 
+i:hover {
+	color: #86FFC6;
+}
+
 #lionbot_logo {
   background-image: url('./img/LionBotLogo.png');
   background-repeat: no-repeat;
@@ -323,5 +358,5 @@ input {
 }
 
 .hidden {
-	display: none; 
+	display: none;
 }
