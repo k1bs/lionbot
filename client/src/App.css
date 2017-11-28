@@ -333,26 +333,6 @@ input[type=text]:hover, input[type=text]:focus {
   transition: .8s;
 }
 
-.home {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.home h1 {
-  font-size: 50pt;
-  font-family: 'Montserrat', sans-serif;
-  color: white;
-  margin: auto;
-}
-
-.home div {
-  background-color: #001827;
-  border-left: transparent;
-  width: 1100px;
-  margin: auto;
-}
-
 .account-container {
 	display: flex;
 	flex-direction: column;
@@ -370,22 +350,72 @@ i:hover {
 	color: #86FFC6;
 }
 
-#lionbot_logo {
-  background-image: url('/img/lionbotlogo.png');
-  background-repeat: no-repeat;
-  width: 400px;
-  height: 500px;
-  margin: auto;
-  margin-top: 30px;
-}
-
 .hidden {
 	display: none;
 }
 
+/*Home page styling */
+.home {
+  background-color: #001827;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 90vw;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.home ul {
+  margin-bottom: 10px;
+}
+
+.home h1 {
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  margin: auto;
+  align-content: center;
+}
+
+#lionbot_logo {
+  background-image: url('/lionbotlogo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 70vw;
+  height: 70vh;
+  margin: auto;
+}
+
+.chatBox_logo_div {
+  display: flex;
+  width: 85vw;
+  height: 30vh;
+  justify-content:space-between;
+  margin: auto;
+  margin-top: 20px;
+}
+.chatBox {
+  background-image: url('/chatBox.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40vw;
+  height: 40vh;
+  margin: auto;
+}
+
+.chatBox h3 {
+  font-size: 12pt;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 30px;
+  width: 30vw;
+  margin-left: 20px;
+}
+
 @media screen and (min-width: 650px) {
 	main {
-		width: 650px;
+		width: 100%;
 	}
 
 	ul {
@@ -407,42 +437,90 @@ i:hover {
 		align-self: flex-start;
 		margin-left: 0px;
 	}
+
+  .home {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 85vw;
+  }
+
+  .chatBox_logo_div {
+    margin: auto;
+    display: flex;
+    width: 85vw;
+    height: 50vh;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+
+  #lionbot_logo {
+    background-image: url('/lionbotlogo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 550px;
+    margin: auto;
+  }
+
+  .chatBox {
+    background-image: url('/chatBox.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 38vw;
+    height: 45vh;
+  }
+
+  .chatBox h3 {
+    font-size: 16pt;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 30px;
+    width: 30vw;
+    margin-left: 25px;
+  }
+
 }
 
-#lionbot_logo {
-  background-image: url('/img/lionbotlogo.png');
-  background-repeat: no-repeat;
-  width: 400px;
-  height: 500px;
-  margin: auto;
-}
+@media screen and (min-width: 990px) {
 
-.chatBox {
-  background-image: url('/img/chatBox.png');
-  background-repeat: no-repeat;
-  width: 400px;
-  height: 300px;
-}
+  .chatBox_logo_div {
+    margin: auto;
+    display: flex;
+    width: 85vw;
+    height: 50vh;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
 
-.chatBox2 {
-  background-image: url('/img/chatBox.png');
-  background-repeat: no-repeat;
-  width: 300px;
-  height: 300px;
-}
+  .chatBox {
+    background-image: url('/chatBox.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:500px;
+    height: 500px;
+  }
 
-.chatBoxContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+  .chatBox h3{
+    font-size: 26pt;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 60px;
+    width: 30vw;
+    margin-left: 45px;
+  }
 
-.chatBox p, .chatBox2 p {
-  margin-top: 24px;
-  font-size: 22pt;
-  font-family: 'Montserrat', sans-serif;
-}
+  #lionbot_logo {
+    background-image: url('/lionbotlogo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 550px;
+    margin: auto;
+    margin-top: 100px;
+  }
 
-.home ul {
-  margin-bottom:
+  .home ul {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row
+  }
 }
