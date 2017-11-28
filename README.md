@@ -1,5 +1,4 @@
-![hero bar](./assets/title-bar.png)
-## LionBot - a Chat Bot for Twitch
+# LionBot - a Chat Bot for Twitch
 [![GitHub license](https://img.shields.io/github/license/k1bs/lionbot.svg)](https://github.com/k1bs/lionbot/blob/master/LICENSE)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
