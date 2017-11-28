@@ -29,7 +29,7 @@ class Header extends React.Component {
     return (
       <header>
         <div className='logo-div'>
-          <h1>LionBot</h1>
+          <img src='/lionbotlogo.png' /><h1>LionBot</h1>
         </div>
         <nav>
           {this.showProperNav()}

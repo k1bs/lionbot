@@ -53,15 +53,18 @@ table {
   flex-direction: column;
   min-height: 100vh;
   width: 100vw;
+	align-items: center;
+	background-color: #ABADAD;
   font-family: 'Open Sans', sans-serif;
 }
 
-.container {
+main {
+	width: 100vw;
   display: flex;
   flex-direction: column;
   flex: 1;
   background-color: #ABADAD;
-	padding-bottom: 10px;
+	/*padding-bottom: 10px;*/
 }
 
 .logo-div {
@@ -72,10 +75,13 @@ table {
   padding: 15px;
   letter-spacing: -1px;
 	display: flex;
+	align-items: center;
 }
 
-.logo-div h1 {
-	border-bottom: 2px solid #86FFC6;
+.logo-div img {
+	height: 70px;
+	width: auto;
+	padding-right: 5px;
 }
 
 .command {
@@ -140,8 +146,9 @@ header {
 footer {
   background-color: #001827;
   color: white;
-  padding: 20px;
+	padding: 20px 0;
   text-align: center;
+	width: 100vw;
 }
 
 nav {
@@ -236,12 +243,15 @@ li:hover {
 	color: white;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 50px;
-	padding: 15px;
+	/*padding: 55px;*/
+	margin: 0 auto;
 	letter-spacing: -1px;
 	display: flex;
-	margin-bottom: -10px;
-	height: available;
+	/*margin-top: -25px;*/
+	/*height: available;*/
 	flex: 1;
+	width: 100%;
+	justify-content: center;
 }
 
 h5:hover {
@@ -261,6 +271,11 @@ h5:hover {
 	font-size: 35px;
 	/*padding-top: 50px;
 	padding-bottom: 50px*/
+}
+
+.about-body {
+	padding: 40px;
+	width: 100%;
 }
 
 .person-container {
@@ -359,4 +374,25 @@ i:hover {
 
 .hidden {
 	display: none;
+}
+
+@media screen and (min-width: 650px) {
+	main {
+		width: 650px;
+	}
+
+	ul {
+		max-width: 600px;
+		justify-content: center;
+		margin: 0 auto;
+	}
+
+	ul li {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.about-body {
+		width: 600px;
+	}
 }

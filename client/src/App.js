@@ -90,7 +90,7 @@ class App extends Component {
       <Router>
         <div className='App'>
           <Header logout={this.logout} auth={this.state.auth} />
-          <div className='container'>
+          <main>
             <Route exact path='/register' render={() => (
               this.state.auth
                 ? <Redirect to='/account' />
@@ -112,8 +112,8 @@ class App extends Component {
                 ? <Redirect to='/login' />
                 : <CommandList auth={this.state.auth} />
               )} />
-            <Route exact path='/about' component={About} />
-          </div>
+          </main>
+          <Route exact path='/about' component={About} />
           <Footer />
         </div>
       </Router>
