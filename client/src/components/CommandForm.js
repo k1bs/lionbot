@@ -39,17 +39,15 @@ class CommandForm extends Component {
     return (
       <div className='form'>
         <div className='command form'>
-          <div>
-            <form onSubmit={(
+          <form onSubmit={(
               this.props.isAdd
               ? (e) => this.handleSubmit('POST', e, this.state)
               : (e) => this.handleSubmit('PUT', e, this.state, this.props.command.id)
             )}>
-              <input type='text' name='keyword' placeholder='!example' value={this.state.keyword} onChange={this.handleChange} />
-              <input type='text' name='response' placeholder='This is an example response.' value={this.state.response} onChange={this.handleChange} />
-              <input type='submit' value='Submit' />
-            </form>
-          </div>
+            <input type='text' name='keyword' placeholder='!example' value={this.state.keyword} onChange={this.handleChange} />
+            <input type='text' name='response' placeholder='This is an example response.' value={this.state.response} onChange={this.handleChange} />
+            <input type='submit' value='Submit' />
+          </form>
         </div>
       </div>
     )

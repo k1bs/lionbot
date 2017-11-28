@@ -139,6 +139,10 @@ main {
   cursor: pointer;
 }
 
+.spacer {
+	height: 40px;
+}
+
 header {
   display: flex;
   flex-direction: column;

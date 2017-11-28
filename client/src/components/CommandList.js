@@ -112,6 +112,7 @@ class CommandList extends Component {
          ? <AddFormContainer isAdd handleFormSubmit={this.handleFormSubmit} />
          : ''}
         {this.renderCommandList()}
+        <div className='spacer' />
       </div>
     )
   }
