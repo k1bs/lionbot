@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Command from './Command'
 import CommandForm from './CommandForm'
+import AddFormContainer from './AddFormContainer'
 
 // called fetch becasue atom uses window.fetch
 const fetch = window.fetch
@@ -108,7 +109,7 @@ class CommandList extends Component {
     return (
       <div className='commandlist'>
         {this.state.auth
-         ? <CommandForm isAdd handleFormSubmit={this.handleFormSubmit} />
+         ? <AddFormContainer isAdd handleFormSubmit={this.handleFormSubmit} />
          : ''}
         {this.renderCommandList()}
       </div>

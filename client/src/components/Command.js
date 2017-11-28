@@ -13,8 +13,8 @@ const Command = (props) => {
       {(props.auth && !props.command.standard)
         ? <div className='button-module'>
           <div className='icon-module'>
-            <span className='edit' onClick={() => props.setEditing(props.command.id)}><i className='fa fa-pencil fa-fw cursor' /></span>
-            <span className='delete-span' onClick={() => props.deleteCommand(props.command.id)}><i className='fa fa-trash fa-fw cursor' /></span>
+            <span className='edit' onClick={() => props.setEditing(props.command.id)}><i className='fa fa-pencil fa-fw fa-lg cursor' /></span>
+            <span className='delete-span' onClick={() => props.deleteCommand(props.command.id)}><i className='fa fa-trash fa-fw fa-lg cursor' /></span>
           </div>
           <label className='switch'>
             <button className={'enabled-button ' + (props.command.enabled ? 'enabled' : '')} onClick={() => {

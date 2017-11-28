@@ -7,19 +7,11 @@ class CommandForm extends Component {
     this.state = {
       keyword: props.command ? props.command.keyword : '',
       response: props.command ? props.command.response : '',
-      enabled: props.command ? props.command.enabled : '',
-      show: true
+      enabled: props.command ? props.command.enabled : ''
     }
     // binding handleChange and handleSubmit to the component
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick () {
-    this.setState(prevState => ({
-      show: !prevState.show
-    }))
   }
 
 // calling a sythetic event when the form changes specifically targeting the name and value fields
@@ -47,15 +39,14 @@ class CommandForm extends Component {
     return (
       <div className='form'>
         <div className='command form'>
-          <button className='showButton' onClick={this.handleClick}> {this.state.isToggleOn ? 'ON' : 'OFF'} </button>
-          <div className={this.props.shouldHide ? 'hidden' : ''} >
+          <div>
             <form onSubmit={(
               this.props.isAdd
               ? (e) => this.handleSubmit('POST', e, this.state)
               : (e) => this.handleSubmit('PUT', e, this.state, this.props.command.id)
             )}>
-              <input type='text' name='keyword' placeholder='Command' value={this.state.keyword} onChange={this.handleChange} />
-              <input type='text' name='response' placeholder='Response' value={this.state.response} onChange={this.handleChange} />
+              <input type='text' name='keyword' placeholder='!example' value={this.state.keyword} onChange={this.handleChange} />
+              <input type='text' name='response' placeholder='This is an example response.' value={this.state.response} onChange={this.handleChange} />
               <input type='submit' value='Submit' />
             </form>
           </div>
