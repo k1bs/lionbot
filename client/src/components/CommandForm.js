@@ -16,40 +16,11 @@ class CommandForm extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-// ********************** idk ********************
   handleClick () {
     this.setState(prevState => ({
       show: !prevState.show
     }))
   }
-
-//   displayForm (props) {
-//     if (this.state.showButton === true) {
-//       return (
-//          <button className='showButton'>+</button>
-//         this.setState = {
-//           showButton: false
-//       )
-//       // render plus sign button and change showButton state to false
-//     } else if (this.state.showButton === false) {
-//       return (
-//         <form onSubmit={(
-//               this.props.isAdd
-//               ? (e) => this.handleSubmit('POST', e, this.state)
-//               : (e) => this.handleSubmit('PUT', e, this.state, this.props.command.id)
-//             )}>
-//           <input type='text' name='keyword' placeholder='Command' value={this.state.keyword} onChange={this.handleChange} />
-//           <input type='text' name='response' placeholder='Response' value={this.state.response} onChange={this.handleChange} />
-//           <input type='submit' value='Submit' />
-//         </form>
-//         this.setState = {
-//           showButton: true
-//       )
-//       // show form and change showButton state to true
-//     }
-//   }
-// }}
-  // **********************************************
 
 // calling a sythetic event when the form changes specifically targeting the name and value fields
   handleChange (e) {
