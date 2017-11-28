@@ -60,8 +60,8 @@ table {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding-top: 160px;
   background-color: #ABADAD;
+	padding-bottom: 10px;
 }
 
 .logo-div {
@@ -117,10 +117,7 @@ table {
 header {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 0;
   width: 100%;
-	z-index: 2;
 }
 
 footer {
