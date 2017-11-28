@@ -2,7 +2,7 @@ import React from 'react'
 
 const Docs = () => {
   return (
-    <div className='docs-container'>
+    <div className='docs-container formatted'>
       <div className='docs-unit'>
         <h3>What is LionBot?</h3>
         <p>LionBot is a tool for Twitch streamers, making it easy for them to offload the task of answering commonly asked questions.</p>

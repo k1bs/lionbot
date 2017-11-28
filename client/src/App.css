@@ -454,6 +454,11 @@ code {
 @media screen and (min-width: 650px) {
 	main {
 		width: 100%;
+		align-items: center;
+	}
+
+	.formatted {
+		width: 600px;
 	}
 
 	ul {

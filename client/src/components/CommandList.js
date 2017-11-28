@@ -107,7 +107,7 @@ class CommandList extends Component {
 // if this.state.auth is true, render the form passing in the handleFormSubmit method
   render () {
     return (
-      <div className='commandlist'>
+      <div className='commandlist formatted'>
         {this.state.auth
          ? <AddFormContainer isAdd handleFormSubmit={this.handleFormSubmit} />
          : ''}
