@@ -63,6 +63,10 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
+<<<<<<< HEAD
+=======
+  padding-top: 10px;
+>>>>>>> Fixed styling on home page. Added new logo
   background-color: #ABADAD;
 	/*padding-bottom: 10px;*/
 }
@@ -146,6 +150,11 @@ main {
 header {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+=======
+  position: relative;
+  top: 0;
+>>>>>>> Fixed styling on home page. Added new logo
   width: 100%;
 	background-color: #001827;
 }
@@ -349,7 +358,7 @@ input[type=text]:hover, input[type=text]:focus {
 .home div {
   background-color: #001827;
   border-left: transparent;
-  width: 900px;
+  width: 1100px;
   margin: auto;
 }
 
@@ -371,10 +380,10 @@ i:hover {
 }
 
 #lionbot_logo {
-  background-image: url('./img/LionBotLogo.png');
+  background-image: url('./img/lionbotlogo.png');
   background-repeat: no-repeat;
-  width: 600px;
-  height: 400px;
+  width: 400px;
+  height: 500px;
   margin: auto;
   margin-top: 30px;
 }
