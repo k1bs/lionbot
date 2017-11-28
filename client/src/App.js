@@ -9,6 +9,7 @@ import Account from './components/Account'
 import Login from './components/Login'
 import './App.css'
 import About from './components/About'
+import Docs from './components/Docs'
 
 const fetch = window.fetch
 
@@ -91,6 +92,7 @@ class App extends Component {
         <div className='App'>
           <Header logout={this.logout} auth={this.state.auth} />
           <main>
+            <Route exact path='/docs' component={Docs} />
             <Route exact path='/register' render={() => (
               this.state.auth
                 ? <Redirect to='/account' />
