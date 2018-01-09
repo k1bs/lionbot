@@ -61,7 +61,8 @@ Once cloned, you'll need to install dependencies for both the front-end and back
 
 ```
 cd lionbot
-yarn install
+
+ install
 cd client
 yarn install
 ```

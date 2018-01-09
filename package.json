@@ -24,7 +24,7 @@
     "start": "node server.js",
     "debugger": "DEBUG=*:* nodemon server.js",
     "test": "mocha",
-    "deploy": "cd client && npm build && cp -a ./build/ ../public/"
+    "deploy": "cd client && npm run build && cp -a ./build/ ../public/"
   },
   "devDependencies": {
     "chai": "^4.1.2",
