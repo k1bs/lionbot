@@ -4,7 +4,7 @@ function botBuilder (channel, commandArray) {
   const bot = new TwitchBot({
     username: 'AOALionBot',
     oauth: 'oauth:ip7kzausrryqclqf8qvbfi0tft2enc',
-    channel: channel
+    channels: [channel]
   })
 
   bot.mapArray = function (array) {
